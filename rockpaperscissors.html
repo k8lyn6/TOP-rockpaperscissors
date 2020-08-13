@@ -8,12 +8,13 @@
 </head>
 <body>
   <script>
+    //initialize global variables
     let playerSelection;
     let computerSelection;
     let playerWins = 0;
     let computerWins = 0;
    
-    function computerPlay(){
+    function computerPlay(){ //generates a random play for the computer
         let randomChoice = Math.floor(Math.random() * 3) + 1;
 
         if (randomChoice == 1) return 'rock';
@@ -21,7 +22,7 @@
         if (randomChoice == 3) return 'scissors';
     }
 
-    function playRound(playerChoice, computerChoice){
+    function playRound(playerChoice, computerChoice){ //plays a round of rock paper scissors
 
         if (playerChoice.toLowerCase() == computerChoice){
             return "It's a tie!"
@@ -41,12 +42,12 @@
         else return "that's not a choice!"
     }
 
-    function newGame(){
+    function newGame(){ //resets game between rounds
         playerSelection = prompt("Choose rock, paper, or scissors");
         computerSelection = computerPlay();
     }
    
-   function game(){
+   function game(){ //plays 5 full rounds of game
        let count = 0;
 
        while (count < 5){
